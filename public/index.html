@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpendLog</title>
+  </head>
+  <body>
+    <h1>SpendLog</h1>
+    <p>A Personal Expense Tracker with Reports</p>
+    <h2>Add expense</h2>
+    <form id="expense-form">
+      <input type="date" id="date" required />
+      <input type="text" id="description" placeholder="Description" required />
+      <input type="text" id="category" placeholder="Category" required />
+      <input
+        type="number"
+        id="amount"
+        placeholder="Amount (PHP)"
+        min="0.01"
+        step="0.01"
+        required
+      />
+      <button type="submit">Add</button>
+    </form>
+    <p id="message"></p>
+
+    <h2>Expenses</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody id="expense-body"></tbody>
+    </table>
+
+    <h2>Reports</h2>
+    <form id="filter-form">
+      <label>Start date <input type="date" id="start" /></label>
+      <label>End date <input type="date" id="end" /></label>
+      <button type="submit">Apply range</button>
+      <button type="button" id="clear-filter">Clear</button>
+    </form>
+    <p id="range-message"></p>
+
+    <h3>By category</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="category-body"></tbody>
+    </table>
+
+    <h3>By day</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="daily-body"></tbody>
+    </table>
+
+    <h3>By month</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="monthly-body"></tbody>
+    </table>
+
+    <script src="app.js"></script>
+  </body>
+</html>
